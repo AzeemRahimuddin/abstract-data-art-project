@@ -44,7 +44,8 @@ Record a short video of your abstract art animation to display here on your READ
 - Upload the thumbnail image to your repo.
 - Use the following markdown
 
-[![Thumbnail for my projet](nameOfThumbnail.png)](https://youtu.be/y4GOfKoYfWg)
+https://github.com/user-attachments/assets/74c1a8cc-f2ec-49ce-a0c2-ec406dfafd4d
+
 
 ## Description
 
