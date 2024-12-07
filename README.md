@@ -17,15 +17,16 @@ Use your knowledge of object-oriented programming, one-dimensional (1D) arrays, 
 
 ## Dataset
 
-Include a hyperlink to the source of your dataset used for this project. Additionally, provide a short description of each column used from the dataset, and the data type.
 
-Example:
 
-Dataset: https://www.kaggle.com/datasets/sansuthi/global-co2-emissions
+Dataset: https://docs.google.com/spreadsheets/d/1yj789eJ7RUO9KOecByva2xUrxjGLLewU7g4Ah_MUmGk/edit?usp=sharing
 
-- **Country** (String) - name of the country
-- **Population** (int) - number of people in the country
-- **CO2Emissions** (double) - carbon dioxide emission in kilotons
+- Name (String) - Name of the building.
+- City (String) - The city that the building is located in.
+- Country (String) - The country that the building is located.
+- Height (int) - The height of the building in feet.
+- Floors (int) - The number of floors the building has.
+- Year Opened (int) - The year the building was opened.
 
 ## UML Diagram
 
