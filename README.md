@@ -36,13 +36,6 @@ Dataset: https://docs.google.com/spreadsheets/d/1yj789eJ7RUO9KOecByva2xUrxjGLLew
 
 ## Video Demo
 
-Record a short video of your abstract art animation to display here on your README. You can do this by:
-
-- Screen record your project running on Code.org.
-- Upload that recording to YouTube.
-- Take a thumbnail for your image.
-- Upload the thumbnail image to your repo.
-- Use the following markdown
 
 https://github.com/user-attachments/assets/74c1a8cc-f2ec-49ce-a0c2-ec406dfafd4d
 
