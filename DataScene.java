@@ -12,7 +12,11 @@ private int [] Year;
 private int [] Floors;
 private String [] textColor;
  
-// Constructor to initialize all the building data arrays
+/*
+* Parameterized constructor to initialize all the building data arrays
+* This constructor initializes all instance variables to the provided values
+* to prepare the DataScene object for operations on the building data.
+ */
 public DataScene (String[] Name, String[] Country, int[] Height, int[] Year, int[] Floors, String[] Color){
 this.Name  = Name;
 this.Country = Country;
@@ -35,7 +39,7 @@ public void show3TallestBuildings(){
   for (int x = 0; x < 3; x++){
 
 if ( x == 0 ){
-    int randomColorIndex = (int)(Math.random() * textColor.length);
+    int randomColorIndex = (int)(Math.random() * textColor.length); // Choose a random text color index
     setTextColor(textColor[randomColorIndex]);
     setTextHeight(16);
    
@@ -43,7 +47,7 @@ if ( x == 0 ){
     drawText("3 Tallest Buildings in the World in a random Text Color",3,20);
     drawImage("Burj-Khalifa.png",65,30,250);
     drawText("Burj Khalifa", 130, 370);
-    playSound("119448__lmbubec__elevator-ding.wav");
+    playSound("119448__lmbubec__elevator-ding.wav"); // Play elevator ding sound
     pause(5);
     drawImage("blankscreen.png",0,0,900);
 }
@@ -82,7 +86,7 @@ if ( x == 0 ){
  */
 public void showBuildingsChina100floors(){
 
-int [] Temp = new int [10];
+int [] Temp = new int [10];      // Array to mark building positions meeting conditions
 String message1;
 String message2;
 
@@ -97,23 +101,13 @@ for (int j = 0; j<10; j++){
     Temp[j] = j;  
     }
 }
- 
+
+  // Display eligible buildings
 for (int k = 0; k<10; k++){
   if (Temp [k] <100){
 
-  if ( k == 0) message1 = "Burj-Khalifa.png";
-  else if ( k == 1) message1 = "Shanghai-Tower.png";
-  else if ( k == 2) message1 = "Clock-Tower.png";
-  else if ( k == 3) message1 = "Ping-An-Finance-Center.png";
-  else if ( k == 4) message1 = "Lotte-Word-Tower.png";
-  else if ( k == 5) message1 = "One-world-Trade-Center.png";
-  else if ( k == 6) message1 = "Guangzhou-CTF-Finance-Center.png";
-  else if ( k == 7) message1 = "Tianjin-CTF-Finance-Center.png";
-  else if ( k == 8) message1 = "China-Zun.png";
-  else if ( k == 9) message1 = "Taipei-101.png";
-  else message1 = "";
-
-  message2 = Name [k];
+    message1 = getPicture(k);
+    message2 = Name [k];
 
     setTextColor ("red");
     setTextHeight(16);
@@ -142,7 +136,7 @@ String message1;
 String message2;  
 
 
-// maximum floors calculation
+// Calculate the building with the maximum number of floors
 for ( int z = 0; z<10; z++){
   int maxFloor = Math.max(Floors[z],maximum);
   if ( Floors[z] > maximum){
@@ -151,18 +145,7 @@ for ( int z = 0; z<10; z++){
   } 
 }
 
-  if ( Temp1 == 0) message1 = "Burj-Khalifa.png";
-  else if ( Temp1 == 1) message1 = "Shanghai-Tower.png";
-  else if ( Temp1 == 2) message1 = "Clock-Tower.png";
-  else if ( Temp1 == 3) message1 = "Ping-An-Finance-Center.png";
-  else if ( Temp1 == 4) message1 = "Lotte-Word-Tower.png";
-  else if ( Temp1 == 5) message1 = "One-world-Trade-Center.png";
-  else if ( Temp1 == 6) message1 = "Guangzhou-CTF-Finance-Center.png";
-  else if ( Temp1 == 7) message1 = "Tianjin-CTF-Finance-Center.png";
-  else if ( Temp1 == 8) message1 = "China-Zun.png";
-  else if ( Temp1 == 9) message1 = "Taipei-101.png";
-  else message1 = "";
- 
+   message1 = getPicture(Temp1);
    message2 = Name [Temp1];
  
     setTextColor ("purple");
@@ -186,7 +169,28 @@ for ( int z = 0; z<10; z++){
   } 
 } 
 
-   if ( Temp1 == 0) message1 = "Burj-Khalifa.png";
+    message1 = getPicture(Temp1);
+    message2 = Name [Temp1];
+ 
+    setTextColor ("green");
+    setTextHeight(18);
+    drawText("This is the building with the minimum number",12,20);
+    drawText(" of floors from the top 10 list",80,45);
+    drawText("The minimum floors: " + minimum,3,80);
+    drawImage(message1,65,90,220);
+    drawText(message2, 60, 390);
+
+}
+
+ /*
+* Gets the image file name for a building based on its index.
+* A parameter that contains Temp1 Index of the building
+* Returns a String containing the file name of the building image
+*/ 
+ public String getPicture(int Temp1){
+ String message1;
+
+  if ( Temp1 == 0) message1 = "Burj-Khalifa.png";
   else if ( Temp1 == 1) message1 = "Shanghai-Tower.png";
   else if ( Temp1 == 2) message1 = "Clock-Tower.png";
   else if ( Temp1 == 3) message1 = "Ping-An-Finance-Center.png";
@@ -197,16 +201,8 @@ for ( int z = 0; z<10; z++){
   else if ( Temp1 == 8) message1 = "China-Zun.png";
   else if ( Temp1 == 9) message1 = "Taipei-101.png";
   else message1 = "";
- 
-   message2 = Name [Temp1];
- 
-    setTextColor ("green");
-    setTextHeight(18);
-    drawText("This is the building with the minimum number",12,20);
-    drawText(" of floors from the top 10 list",80,45);
-    drawText("The minimum floors: " + minimum,3,80);
-    drawImage(message1,65,90,220);
-    drawText(message2, 60, 390);
+
+ return message1;
 
 }
 
